@@ -1,0 +1,98 @@
+@use "../abstracts" as a;
+
+.site-container {
+  display: grid;
+  justify-content: center;
+}
+
+.navigation-container {
+  width: 100vw;
+  color: a.$color-secondary;
+  background-color: a.$color-white;
+  border-bottom: 5px solid a.$color-secondary;
+
+  display: flex;
+  justify-content: end;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+}
+
+.page-container {
+  width: 100vw;
+}
+
+.contact-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.works-container {
+  width: 100%;
+  padding: a.$gap-xlarge 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container {
+  width: 100vw;
+  color: a.$color-secondary;
+  background-color: a.$color-white;
+  border-top: 5px solid a.$color-secondary;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn {
+  display: block;
+  font-size: a.$font-med;
+  font-weight: 500;
+  line-height: 1.6;
+
+  text-decoration: 0;
+
+  padding: a.$gap-small a.$gap-med;
+  border-radius: a.rem(20);
+
+  @include a.btnSolid(a.$color-secondary-light);
+
+  transition: all 0.3s;
+
+  @include a.respond(desktop) {
+    font-size: a.$font-smed;
+    border-radius: a.rem(14);
+    width: a.rem(200);
+  }
+
+  @include a.respond(desktop-small) {
+    width: a.rem(200);
+  }
+
+  &--orange {
+    border: 2px solid a.$color-primary;
+    @include a.btn(a.$color-white, a.$color-primary, a.$color-secondary-light);
+  }
+  &--green {
+    border: 2px solid a.$color-tertiary;
+    @include a.btn(
+      a.$color-tertiary,
+      a.$color-primary-lightest,
+      a.$color-secondary-light
+    );
+  }
+
+  &:hover,
+  &:active {
+    transform: translateY(-(a.$gap-small));
+    @include a.btnHover(a.$color-secondary-light);
+  }
+}

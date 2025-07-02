@@ -1,0 +1,14 @@
+@use "../abstracts" as a;
+
+.commissions__underconstruction {
+  height: a.rem(200);
+  width: a.rem(400);
+
+  background-color: a.$color-white;
+  box-shadow: 5px 5px a.$color-secondary-light;
+  border-radius: a.rem(20);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,63 @@
+@use "../abstracts" as a;
+
+.contact {
+  width: a.rem(460);
+
+  color: a.$color-secondary-light;
+  background-color: a.$color-primary-lightest;
+  padding: a.$gap-med;
+  border-radius: a.rem(20);
+  box-shadow: 5px 5px a.$color-secondary-light;
+
+  display: flex;
+  flex-direction: column;
+  gap: a.$gap-large;
+
+  @include a.respond(desktop) {
+    width: a.rem(380);
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: a.$gap-med;
+  }
+
+  &__email {
+    font-size: a.$font-med;
+    font-weight: 400;
+    line-height: 1.6;
+
+    @include a.respond(desktop) {
+      font-size: a.$font-smed;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: a.$gap-med;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: a.$font-large;
+    color: a.$color-secondary;
+    text-decoration: none;
+
+    transition: all 0.3s;
+
+    &:hover,
+    &:active {
+      color: a.$color-tertiary;
+    }
+  }
+
+  &__button {
+    align-self: start;
+  }
+
+  &__image {
+    justify-self: end;
+    align-self: end;
+    width: 100%;
+  }
+}

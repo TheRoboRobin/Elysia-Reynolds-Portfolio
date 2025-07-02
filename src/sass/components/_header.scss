@@ -1,0 +1,84 @@
+@use "../abstracts" as a;
+
+.navigation {
+  &__menu {
+    @include a.btn(a.$color-white, a.$color-primary, a.$color-secondary-light);
+    max-height: a.rem(400);
+    width: a.rem(300);
+
+    padding: a.$gap-med;
+    border-radius: a.rem(20);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: a.$gap-smed;
+
+    position: absolute;
+    top: -400%;
+    left: 8%;
+
+    transition: all 0.2s;
+
+    &:hover:not(.open) {
+      transform: translatey(a.$gap-small);
+    }
+
+    @include a.respond(desktop-small) {
+      width: a.rem(260);
+      top: -460%;
+    }
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    & li:not(:last-child) {
+      border-bottom: 1px solid a.$color-primary-light;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: a.$font-smed;
+    font-weight: 600;
+    line-height: 1.6;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+
+    padding: a.$gap-smed a.$gap-med;
+
+    transition: all 0.3s ease-in;
+
+    &:hover,
+    &:active {
+      transform: scale(120%);
+      color: a.$color-tertiary;
+    }
+  }
+
+  &__logo {
+    width: a.rem(150);
+  }
+
+  &__header {
+    margin: a.$gap-smed a.$gap-xlarge;
+  }
+}
+
+#navigation__icon {
+  font-size: a.$font-med;
+  color: a.$color-secondary-light;
+  cursor: pointer;
+}
+
+.open {
+  top: 175%;
+
+  @include a.respond(desktop-small) {
+    top: 140%;
+  }
+}

@@ -1,0 +1,62 @@
+@use "../abstracts" as a;
+
+.header-smaller-desktop {
+  @include a.respond(desktop-small) {
+    font-size: a.$font-med;
+  }
+}
+
+.paddingsides {
+  padding: a.$gap-med;
+}
+
+.marbottomxl {
+  margin-bottom: a.$gap-xlarge;
+
+  @include a.respond(desktop) {
+    margin-bottom: a.$gap-small;
+  }
+}
+
+.marbottom {
+  margin-bottom: a.$gap-med;
+}
+
+.vh--fit {
+  height: 92vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marxlmed {
+  margin: calc(a.$gap-large * 2) a.$gap-med;
+
+  @include a.respond(desktop) {
+    margin: a.$gap-xlarge a.$gap-med;
+  }
+}
+
+.backgroundimage {
+  background: url("../assets/images/Hero-Background-2.png");
+  background-position: center;
+  // background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.backgroundimage--2 {
+  background: url("../assets/images/Hero-Background-3.png");
+  background-position: 25% 50%;
+  background-repeat: repeat-y;
+
+  @include a.respond(desktop) {
+    background-position: 21% 50%;
+  }
+}
+
+.color--white {
+  color: a.$color-white;
+}

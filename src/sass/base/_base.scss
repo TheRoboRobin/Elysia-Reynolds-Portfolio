@@ -7,11 +7,11 @@
 }
 
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
 }
 
 body {
-  font-family: a.$gloock;
-  font-size: 1.4rem;
+  font-family: a.$roboto;
+  font-size: a.$font-smed;
+  background-color: a.$color-primary-light;
 }

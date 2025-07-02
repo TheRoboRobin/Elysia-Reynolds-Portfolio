@@ -1,0 +1,10 @@
+@use "../abstracts" as a;
+.footer {
+  &__logo {
+    height: a.rem(100);
+
+    padding: a.$gap-small;
+  }
+  &__copyright {
+  }
+}

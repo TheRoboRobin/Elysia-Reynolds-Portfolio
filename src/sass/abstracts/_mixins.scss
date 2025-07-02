@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as a;
+
+@mixin btnColor($property, $color) {
+  #{$property}: $color;
+}
+
+@mixin btnSolid($color) {
+  box-shadow: 5px 5px $color;
+}
+
+@mixin btnHover($color) {
+  box-shadow: 7px 7px $color;
+}
+
+@mixin btn($color1, $color2, $color3) {
+  color: $color1;
+  background-color: $color2;
+  box-shadow: 5px 5px $color3;
+}
+
+@mixin gridlayout($num1, $num2, $num3, $num4, $color) {
+  grid-column: col-start $num1 / col-end $num2;
+  grid-row: row-start $num3 / row-end $num4;
+  background-color: $color;
+}
+
+@mixin gridtitle($pad, $rad, $shadow) {
+  padding: $pad;
+  border-radius: $rad;
+  box-shadow: 5px 5px $shadow;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: a.$bp-smallest) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: a.$bp-small) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: a.$bp-med) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-small {
+    @media only screen and (max-width: a.$bp-large) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: a.$bp-larger) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-large {
+    @media only screen and (max-width: a.$bp-largest) {
+      @content;
+    }
+  }
+}

@@ -1,4 +1,41 @@
+@use "functions" as f;
+
 //typography
 
 $gloock: "Gloock", serif;
 $roboto: "Roboto", sans-serif;
+
+$font-small: f.rem(12);
+$font-smed: f.rem(14);
+$font-med: f.rem(24);
+$font-large: f.rem(36);
+$font-xlarge: f.rem(52);
+
+//color
+
+$color-primary: #ec8d22;
+$color-primary-light: #ffcb8f;
+$color-primary-lightest: #f7ddbf;
+$color-secondary-dark: #23072b;
+$color-secondary: #3d1c47;
+$color-secondary-light: #664a64;
+$color-tertiary: #2ca28e;
+$color-tertiary-light: #b6eed4;
+$color-white: #edebeb;
+
+//spacing
+
+$gap-small: f.rem(8);
+$gap-smed: f.rem(16);
+$gap-med: f.rem(24);
+$gap-large: f.rem(32);
+$gap-xlarge: f.rem(48);
+
+//breakpoints
+
+$bp-smallest: f.rem(600);
+$bp-small: f.rem(800);
+$bp-medium: f.rem(1000);
+$bp-large: f.rem(1200);
+$bp-larger: f.rem(1400);
+$bp-largest: f.rem(1600);

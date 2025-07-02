@@ -59,15 +59,89 @@ And as far as I see, it works how I wanted it to! It's nice to feel like I have 
 
 Building out the rest of the structure was pretty straight forward. I just have to be sure about attaching the css and js files correctly on each page.
 
+After building out the structure and doing my first commit, I wanted to take a look at how I do rem conversion. I was told by someone on frontend mentor that there was a bug with the whole 62.5% thing in some browsers. And so after looking into that I borrowed Coder Coder's function from their video, [Please stop using px for font-size](https://www.youtube.com/watch?v=xCSw6bPXZks).
+
+```scss
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+```
+
+It didn't work at first but after a bit of reading I realized that @use 'sass:math'; at the top was necessary to make the math module function.
+
+After styling the header and footer and laying out the site, I added my DOM manipulation for the open and close of the menus. This is where I realized I was in over my head. I had no idea that the method I was using was adding the header and footer to the shadow DOM, something I barely understood existed. And as I read, It just got more and more complex.
+
+So I began to search for another solution. Could I make it simpler by just using createElement and appendChild? Eventually what I figured out was happening was much more simple than I thought. The event listener was applying prior to the dynamic html being added to the DOM. So it was trying to apply to something that doesn't exist yet. The workaround that I came to after a while was to add the event listener to the body and an if statement that looks for the "navigation\_\_icon" in the event.
+
+```javascript
+document.body.addEventListener("click", function (event) {
+  if (event.target.id === "navigation__icon") menu.classList.toggle("open");
+});
+```
+
+While proceeding on the styling, I decided to incorperate mixins in this website. I have used them pretty sparingly and had not gotten the hang of them yet. On a previous project I had used a conceptual custom "private" property and from what I understood, this could be done roughly the same with mixins.
+
+And so, in order to handle the button coloring, I made a mixin that takes the arguments $property and $color.
+
+```scss
+@mixin btnColor($property, $color) {
+  #{$property}: $color;
+}
+```
+
+This ends up being pretty handy because then I'm just inserting the @include to use it. But I thought, why don't I just simplify it further?
+
+```scss
+@mixin btn($color1, $color2, $color3) {
+  color: $color1;
+  background-color: $color2;
+  box-shadow: 5px 5px $color3;
+}
+```
+
+This worked out great for me. Multi-use. Removing repitition.
+
+Making a grid was fairly quick to do because I made a mixin to handle it. Just insert the start and end of the row and columns and a color.
+
+```scss
+@mixin gridlayout($num1, $num2, $num3, $num4, $color) {
+  grid-column: col-start $num1 / col-end $num2;
+  grid-row: row-start $num3 / row-end $num4;
+  background-color: $color;
+}
+```
+
+The next thing I came up against was a need for a simple lightbox. I could probably code out a lightbox but I went looking for a lightweight script I could use. What I found was fslightbox. It seems lightweight and easy to implement, so I'll give it a try.
+
+When returning to the project after the weekend, I wasn't satisfied with the way the hero was responding. So What I decided was to build a static image to use instead of the grid. The grid was still working perfectly for the works page, but not for the hero.
+
+And so in my design program I created the layout of images that I had put together so that I could export it as a usable png and bingo. Worked how I wanted it to. Much more responsive too.
+
+The bulk of this project was spent setting up the page to display the artists works. Went fairly smoothly, just took time and a lot of code. But the images were working smoothly with the fslightbox script.
+
+After having a friend review what I had built, he suggested that the background needed a bit more to it. After some tossing around of ideas, I created a little supergraphic line design that added direction to the background without being too distracting.
+
+![supergraphic lines](/src/assets/images/Hero-Background-2.png)
+
+This tightened up the site and added some visual direction to the pages.
+
+Finally, in order to get the site published, I completed the media queries for the desktop screen sizes. I wanted to have this up bare minimum so the artist could begin using the portfolio on resumes. While working on it, I realized I had my grid set up in a way that was hard to adjust responsively. So after a little bit of testing, I adjusted to make each grid easy to adjust.
+
 ### Built with
 
 - Semantic HTML5 markup
 - Flexbox
 - CSS Grid
+- Figma
 - SASS
 - Block Element Modifier / 7-1 Architecture
 - DOM Manipulation
 - AJAX
+- fslightbox
 
 ### What I learned
 
