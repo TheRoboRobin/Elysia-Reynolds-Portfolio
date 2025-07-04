@@ -24,6 +24,9 @@
 
 .vh--fit {
   height: 92vh;
+  @include a.respond(tab-port) {
+    height: 84vh;
+  }
 }
 
 .flex {
@@ -54,6 +57,9 @@
 
   @include a.respond(desktop) {
     background-position: 21% 50%;
+  }
+  @include a.respond(tab-port) {
+    background-position: 50% 50%;
   }
 }
 

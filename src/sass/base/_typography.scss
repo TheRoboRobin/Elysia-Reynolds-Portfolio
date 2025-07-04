@@ -30,6 +30,9 @@
   @include a.respond(desktop-small) {
     font-size: a.$font-small;
   }
+  @include a.respond(tab-port) {
+    font-size: a.rem(18);
+  }
 }
 
 .navigation-heading {
@@ -40,7 +43,16 @@
   letter-spacing: 1px;
   text-align: end;
 
+  @include a.respond(desktop) {
+    font-size: a.rem(20);
+  }
   @include a.respond(desktop-small) {
     font-size: a.rem(18);
+  }
+  @include a.respond(tab-land-large) {
+    font-size: a.rem(16);
+  }
+  @include a.respond(tab-land) {
+    font-size: a.$font-small;
   }
 }

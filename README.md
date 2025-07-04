@@ -1,6 +1,6 @@
 # Elysia Reynolds Portfolio
 
-This is a personal project. My partner needed a portfolio website. This is a good challenge for myself to do something unguided.
+This is a personal project. My partner needed a portfolio website. This is a good challenge for myself to do something unguided and creatively driven.
 
 ## Table of contents
 
@@ -22,7 +22,7 @@ This is a personal project. My partner needed a portfolio website. This is a goo
 Users should be able to:
 
 - Easily find the resume and contact information.
-- Get a good picture of what the artists skills and style are.
+- Present a good picture of what the artists skills and style are.
 - View the optimal layout for the site depending on their device's screen size
 
 ### Screenshot
@@ -131,6 +131,10 @@ This tightened up the site and added some visual direction to the pages.
 
 Finally, in order to get the site published, I completed the media queries for the desktop screen sizes. I wanted to have this up bare minimum so the artist could begin using the portfolio on resumes. While working on it, I realized I had my grid set up in a way that was hard to adjust responsively. So after a little bit of testing, I adjusted to make each grid easy to adjust.
 
+I never realized how easy vercel was. In order to publish the production branch on github, I had to build a .yaml file. With vercel, I just selected the branch when importing to vercel, and the sync was automatically set up. Super handy. But I can see the use in both. For my current uses, this is perfect. I could see how the customizability could be necessary with larger projects with multiple people.
+
+Finally I spent the time to put in the media queries for the website. Lots of finicky work that I'm getting used to at this point. Overall, I think it was pretty easy to do. The most time consuming was the grids. The hardest thing to do was the switch to the mobile menu. I still feel like I haven't gotten the hang of that yet. Like it's still just trial and error trying to see if what I do works. What I need to do is plan both menu's and the structure necessary first prior to starting in on styling everything.
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -145,9 +149,21 @@ Finally, in order to get the site published, I completed the media queries for t
 
 ### What I learned
 
+Going start to finish for a complete project like this was super informative. I was able to research and then impliment the menu across the multi page site. Taking the needs of the client and then turning that into function was also a good experience. The problems I encountered were way different than the problems I'd encountered before working with wordpress. Designing out the entire website start to finish, working with figma into code, doesn't quite have the guard rails I had before but also presented a freedom that was an adjustment too.
+
+There is more within the design phase than I considered. Elements I should have planned out further in the beginning to make implementation easier.
+
+At the same time as this having been an eye opening experience, it was also a confidence boost. Here I am publishing and I did it. This is something I created start to finish. No WordPress. No themes with tiny adjustments of code. I can do this. I still have much to learn but I've come a long way.
+
+I still want to do some adjustments to this over time but this is enough to be functional.
+
 ### Continued development
 
+Something I could consider for development going forward is how to make the usage of mass amounts of images smoother. Maybe there is something I could use within JavaScript to do that. Create an object containing the images. Then create the elements themself dynamically. Faster less clunky code. What I've done works. But that is something to look at and learn from.
+
 ### Useful resources
+
+[fslightbox](https://fslightbox.com)
 
 ## Author
 

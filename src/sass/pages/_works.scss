@@ -15,6 +15,11 @@
     height: a.rem(60);
     width: a.rem(260);
   }
+
+  @include a.respond(tab-port) {
+    height: a.rem(60);
+    width: a.rem(260);
+  }
 }
 
 .bannersandbranding {
@@ -38,11 +43,28 @@
     @include a.respond(desktop-small) {
       grid-template-rows: repeat(4, [row-start] a.rem(50) [row-end]);
     }
+
+    @include a.respond(tab-land) {
+      grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(8, [row-start] a.rem(50) [row-end]);
+    }
+
+    @include a.respond(tab-port) {
+      grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(10, [row-start] a.rem(60) [row-end]);
+    }
+
+    @include a.respond(phone) {
+      grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(20, [row-start] a.rem(70) [row-end]);
+    }
   }
 
   &__box {
     border-radius: a.rem(20);
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
     @include a.respond(desktop-small) {
       border-radius: a.rem(14);
@@ -57,50 +79,115 @@
       @include a.respond(desktop) {
         @include a.gridtitle(a.$gap-smed, a.rem(16), a.$color-secondary);
       }
+
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 3, 2, 2, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 1, 1, a.$color-secondary-light);
+      }
     }
 
     &--1 {
       @include a.gridlayout(2, 2, 1, 2, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(4, 4, 1, 2, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 11, 12, a.$color-white);
+      }
     }
 
     &--2 {
       @include a.gridlayout(3, 5, 3, 4, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 3, 4, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 13, 14, a.$color-white);
+      }
     }
 
     &--3 {
       @include a.gridlayout(2, 2, 3, 4, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 11, 12, a.$color-white);
+      }
     }
 
     &--4 {
       @include a.gridlayout(5, 6, 1, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 2, 9, 10, a.$color-white);
+      }
     }
 
     &--5 {
       @include a.gridlayout(7, 7, 1, 3, a.$color-white);
+
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 1, 5, 8, a.$color-white);
+      }
     }
 
     &--6 {
       @include a.gridlayout(6, 6, 3, 3, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 7, 8, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 17, 18, #fff);
+      }
     }
 
     &--7 {
       @include a.gridlayout(6, 6, 4, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 4, 5, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 3, 9, 10, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 19, 20, #fff);
+      }
     }
 
     &--8 {
       @include a.gridlayout(8, 8, 1, 2, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 2, 5, 6, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 17, 18, a.$color-white);
+      }
     }
 
     &--9 {
       @include a.gridlayout(7, 7, 4, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(4, 5, 7, 8, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 6, 6, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 16, 16, a.$color-white);
+      }
     }
 
     &--10 {
       @include a.gridlayout(3, 3, 1, 1, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 2, 2, a.$color-white);
+      }
     }
 
     &--11 {
       @include a.gridlayout(1, 1, 1, 2, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 3, 4, a.$color-secondary-light);
+      }
     }
 
     &--12 {
@@ -109,26 +196,66 @@
 
     &--13 {
       @include a.gridlayout(8, 8, 3, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 2, 7, 8, a.$color-white);
+      }
     }
 
     &--14 {
       @include a.gridlayout(9, 9, 3, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 3, 7, 8, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 5, 6, a.$color-white);
+      }
     }
 
     &--15 {
       @include a.gridlayout(4, 4, 1, 1, a.$color-white);
+
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 2, 1, 1, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 2, 2, a.$color-white);
+      }
     }
 
     &--16 {
       @include a.gridlayout(10, 10, 2, 3, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 6, 8, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 9, 10, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 19, 20, #fff);
+      }
     }
 
     &--17 {
       @include a.gridlayout(10, 10, 1, 1, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(4, 5, 5, 6, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 5, 5, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 15, 15, a.$color-white);
+      }
     }
 
     &--18 {
       @include a.gridlayout(9, 9, 1, 2, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 3, 5, 6, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 15, 16, a.$color-white);
+      }
     }
   }
   &__img {
@@ -163,6 +290,21 @@
     @include a.respond(desktop-small) {
       grid-template-rows: repeat(4, [row-start] a.rem(50) [row-end]);
     }
+
+    @include a.respond(tab-land) {
+      grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(8, [row-start] a.rem(60) [row-end]);
+    }
+
+    @include a.respond(tab-port) {
+      grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(12, [row-start] a.rem(70) [row-end]);
+    }
+
+    @include a.respond(phone) {
+      grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(22, [row-start] a.rem(100) [row-end]);
+    }
   }
 
   &__box {
@@ -182,63 +324,171 @@
       @include a.respond(desktop) {
         @include a.gridtitle(a.$gap-smed, a.rem(16), a.$color-secondary);
       }
+      @include a.respond(tab-land) {
+        @include a.gridlayout(5, 5, 3, 3, a.$color-secondary-light);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 3, 3, 3, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 1, 1, a.$color-secondary-light);
+      }
     }
     &--1 {
       @include a.gridlayout(1, 2, 1, 3, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 2, 3, a.$color-white);
+      }
     }
     &--2 {
       @include a.gridlayout(5, 5, 3, 3, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 4, 5, 6, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 3, 5, 6, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 17, 18, a.$color-white);
+      }
     }
     &--3 {
       @include a.gridlayout(7, 7, 2, 3, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 2, 5, 6, a.$color-white);
+      }
     }
     &--4 {
       @include a.gridlayout(1, 2, 4, 4, a.$color-white);
     }
     &--5 {
       @include a.gridlayout(6, 6, 3, 4, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(2, 2, 11, 12, a.$color-white);
+      }
     }
     &--6 {
       @include a.gridlayout(3, 3, 3, 4, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 5, 6, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 17, 18, a.$color-white);
+      }
     }
     &--7 {
       @include a.gridlayout(7, 7, 4, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 1, 6, 6, a.$color-white);
+      }
     }
     &--8 {
       @include a.gridlayout(4, 5, 1, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 1, 2, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 13, 14, a.$color-white);
+      }
     }
     &--9 {
       @include a.gridlayout(6, 6, 1, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 9, 10, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 21, 22, a.$color-white);
+      }
     }
     &--10 {
       @include a.gridlayout(7, 7, 1, 1, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 1, 5, 5, a.$color-white);
+      }
     }
     &--11 {
       @include a.gridlayout(10, 10, 1, 1, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 5, 5, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 3, 11, 12, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 9, 9, a.$color-white);
+      }
     }
     &--12 {
       @include a.gridlayout(5, 5, 4, 4, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 3, 4, 4, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 15, 16, a.$color-white);
+      }
     }
     &--13 {
       @include a.gridlayout(8, 9, 3, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 5, 7, 8, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 7, 8, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 19, 20, a.$color-white);
+      }
     }
     &--14 {
       @include a.gridlayout(10, 10, 3, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 7, 8, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 11, 12, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 21, 22, a.$color-white);
+      }
     }
     &--15 {
       @include a.gridlayout(4, 4, 3, 4, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 15, 16, a.$color-white);
+      }
     }
     &--16 {
       @include a.gridlayout(10, 10, 2, 2, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 6, 6, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(2, 3, 9, 10, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 10, 10, a.$color-white);
+      }
     }
     &--17 {
       @include a.gridlayout(3, 3, 1, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 1, 9, 10, a.$color-white);
+      }
     }
     &--18 {
       @include a.gridlayout(8, 8, 1, 1, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 2, 7, 8, a.$color-white);
+      }
     }
     &--19 {
       @include a.gridlayout(9, 9, 1, 2, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(5, 5, 5, 6, a.$color-white);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 1, 11, 12, a.$color-white);
+      }
     }
   }
 
@@ -271,8 +521,23 @@
     @include a.respond(desktop) {
       grid-template-rows: repeat(4, [row-start] a.rem(60) [row-end]);
     }
+
     @include a.respond(desktop-small) {
       grid-template-rows: repeat(4, [row-start] a.rem(50) [row-end]);
+    }
+
+    @include a.respond(tab-land) {
+      grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(8, [row-start] a.rem(60) [row-end]);
+    }
+
+    @include a.respond(tab-port) {
+      grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(10, [row-start] a.rem(70) [row-end]);
+    }
+    @include a.respond(phone) {
+      grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(18, [row-start] a.rem(100) [row-end]);
     }
   }
 
@@ -292,39 +557,105 @@
       @include a.respond(desktop) {
         @include a.gridtitle(a.$gap-smed, a.rem(16), a.$color-secondary);
       }
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 2, 2, 2, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 1, 1, a.$color-secondary-light);
+      }
     }
     &--1 {
       @include a.gridlayout(1, 2, 1, 3, a.$color-tertiary);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 1, 1, 2, a.$color-tertiary);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 2, 2, a.$color-tertiary);
+      }
     }
     &--2 {
       @include a.gridlayout(7, 8, 3, 4, a.$color-secondary-light);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 3, 7, 8, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 7, 8, a.$color-secondary-light);
+      }
     }
     &--3 {
       @include a.gridlayout(1, 1, 4, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 2, 3, 4, a.$color-white);
+      }
     }
     &--4 {
       @include a.gridlayout(3, 4, 3, 4, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 13, 14, a.$color-white);
+      }
     }
     &--5 {
       @include a.gridlayout(9, 10, 1, 4, #000);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(4, 6, 5, 8, #000);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 9, 10, #000);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 17, 18, a.$color-primary);
+      }
     }
     &--6 {
       @include a.gridlayout(3, 4, 1, 1, a.$color-secondary-light);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 4, 1, 2, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 11, 12, a.$color-secondary-light);
+      }
     }
     &--7 {
       @include a.gridlayout(2, 2, 4, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(2, 2, 1, 1, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 2, 2, a.$color-tertiary);
+      }
     }
     &--8 {
-      @include a.gridlayout(6, 6, 1, 2, a.$color-primary);
+      @include a.gridlayout(6, 6, 1, 2, a.$color-secondary-light);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 7, 8, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 15, 16, a.$color-secondary-light);
+      }
     }
     &--9 {
       @include a.gridlayout(5, 5, 1, 2, a.$color-tertiary-light);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 5, 6, a.$color-tertiary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 15, 16, a.$color-tertiary-light);
+      }
     }
     &--10 {
       @include a.gridlayout(7, 8, 1, 2, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 3, 5, 6, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 5, 6, a.$color-secondary-light);
+      }
     }
     &--11 {
       @include a.gridlayout(5, 6, 3, 4, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 2, 9, 10, #fff);
+      }
     }
   }
 
@@ -356,6 +687,20 @@
     @include a.respond(desktop) {
       grid-template-rows: repeat(6, [row-start] a.rem(60) [row-end]);
     }
+
+    @include a.respond(tab-land) {
+      grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(12, [row-start] a.rem(70) [row-end]);
+    }
+
+    @include a.respond(tab-port) {
+      grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(18, [row-start] a.rem(70) [row-end]);
+    }
+    @include a.respond(phone) {
+      grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(34, [row-start] a.rem(100) [row-end]);
+    }
   }
 
   &__box {
@@ -378,39 +723,105 @@
       @include a.respond(desktop) {
         @include a.gridtitle(a.$gap-smed, a.rem(16), a.$color-secondary);
       }
+      @include a.respond(tab-land) {
+        @include a.gridlayout(4, 5, 2, 2, a.$color-secondary-light);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(2, 3, 2, 2, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 1, 1, a.$color-secondary-light);
+      }
     }
     &--1 {
       @include a.gridlayout(1, 2, 1, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 2, 15, 16, #fff);
+      }
     }
     &--2 {
       @include a.gridlayout(4, 5, 5, 6, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(2, 3, 17, 18, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 33, 34, a.$color-white);
+      }
     }
     &--3 {
       @include a.gridlayout(3, 3, 1, 2, #fff);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 1, 1, 2, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 19, 20, #fff);
+      }
     }
     &--4 {
       @include a.gridlayout(9, 10, 3, 4, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(4, 6, 9, 10, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(2, 4, 13, 14, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 29, 30, #fff);
+      }
     }
     &--5 {
       @include a.gridlayout(8, 8, 3, 3, a.$color-white);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 3, 9, 9, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 25, 25, #fff);
+      }
     }
     &--6 {
       @include a.gridlayout(1, 1, 3, 3, a.$color-white);
     }
     &--7 {
       @include a.gridlayout(4, 5, 1, 1, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(2, 3, 1, 1, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 2, 2, #fff);
+      }
     }
     &--8 {
       @include a.gridlayout(6, 6, 2, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 17, 17, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 17, 17, a.$color-white);
+      }
     }
     &--9 {
       @include a.gridlayout(2, 3, 3, 5, a.$color-white);
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 21, 22, #fff);
+      }
     }
     &--10 {
       @include a.gridlayout(4, 5, 2, 2, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 8, 8, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 24, 24, #fff);
+      }
     }
     &--11 {
       @include a.gridlayout(6, 6, 2, 3, #fff);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 1, 2, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 19, 20, #fff);
+      }
     }
     &--12 {
       @include a.gridlayout(1, 1, 5, 6, #fff);
@@ -420,51 +831,129 @@
     }
     &--14 {
       @include a.gridlayout(6, 6, 5, 6, #fff);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 9, 10, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 25, 26, #fff);
+      }
     }
     &--15 {
       @include a.gridlayout(8, 9, 5, 6, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 5, 11, 12, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 11, 12, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 27, 28, #fff);
+      }
     }
     &--16 {
       @include a.gridlayout(4, 4, 3, 4, #fff);
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 3, 4, #fff);
+      }
     }
     &--17 {
       @include a.gridlayout(5, 5, 3, 4, #fff);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 5, 6, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 13, 14, #fff);
+      }
     }
     &--18 {
       @include a.gridlayout(7, 7, 5, 6, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 2, 11, 12, #fff);
+      }
     }
     &--19 {
       @include a.gridlayout(2, 2, 6, 6, a.$color-white);
     }
     &--20 {
       @include a.gridlayout(7, 7, 1, 2, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 2, 7, 8, #fff);
+      }
     }
     &--21 {
       @include a.gridlayout(10, 10, 5, 5, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 11, 11, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 1, 13, 13, #fff);
+      }
     }
     &--22 {
       @include a.gridlayout(10, 10, 6, 6, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(6, 6, 12, 12, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 1, 14, 14, #fff);
+      }
     }
     &--23 {
       @include a.gridlayout(3, 3, 6, 6, #fff);
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 5, 5, #fff);
+      }
     }
     &--24 {
       @include a.gridlayout(7, 7, 3, 4, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(1, 2, 9, 10, #fff);
+      }
     }
     &--25 {
       @include a.gridlayout(8, 8, 4, 4, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 3, 10, 10, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 1, 26, 26, #fff);
+      }
     }
     &--26 {
-      @include a.gridlayout(6, 6, 1, 1, a.$color-white);
+      @include a.gridlayout(6, 6, 1, 1, a.$color-secondary-light);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(3, 4, 15, 16, a.$color-secondary-light);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 31, 32, a.$color-secondary-light);
+      }
     }
     &--27 {
       @include a.gridlayout(10, 10, 1, 2, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(5, 6, 7, 8, #fff);
+      }
+      @include a.respond(tab-port) {
+        @include a.gridlayout(1, 1, 17, 18, #fff);
+      }
     }
     &--28 {
       @include a.gridlayout(6, 6, 4, 4, a.$color-white);
+      @include a.respond(tab-port) {
+        @include a.gridlayout(4, 4, 18, 18, a.$color-white);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(2, 2, 18, 18, a.$color-white);
+      }
     }
     &--29 {
       @include a.gridlayout(8, 9, 1, 1, #fff);
+      @include a.respond(tab-land) {
+        @include a.gridlayout(3, 4, 7, 8, #fff);
+      }
+      @include a.respond(phone) {
+        @include a.gridlayout(1, 2, 23, 23, #fff);
+      }
     }
   }
 

@@ -13,6 +13,36 @@
     ". img img"
     "desc img img";
 
+  @include a.respond(tab-land) {
+    grid-template-areas:
+      ". img img"
+      ". img img"
+      "desc desc .";
+    gap: a.$gap-med;
+  }
+
+  @include a.respond(tab-port) {
+    height: auto;
+    grid-template-areas:
+      "img img img"
+      "img img img"
+      "desc desc desc";
+    gap: a.$gap-large;
+  }
+
+  @include a.respond(phone) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr) a.rem(10) 1fr;
+    grid-template-areas:
+      "img img img"
+      "img img img"
+      "b b b"
+      "desc desc desc";
+  }
+  @include a.respond(phone-small) {
+    grid-template-rows: repeat(2, 1fr) a.rem(20) 1fr;
+  }
+
   &__description {
     grid-area: desc;
     align-self: flex-start;
@@ -20,6 +50,15 @@
     display: flex;
     flex-direction: column;
     gap: a.$gap-large;
+
+    @include a.respond(tab-port) {
+      align-self: stretch;
+      width: auto;
+    }
+    @include a.respond(phone) {
+      align-self: stretch;
+      width: 80%;
+    }
   }
 
   &__buttons {
@@ -31,76 +70,29 @@
     height: 100%;
     grid-area: img;
     justify-self: end;
+
+    @include a.respond(desktop) {
+      height: 90%;
+    }
+    @include a.respond(desktop-small) {
+      height: 75%;
+    }
+    @include a.respond(tab-land) {
+      height: 100%;
+    }
+
+    @include a.respond(tab-port) {
+      padding-top: a.$gap-large;
+      justify-self: center;
+      height: auto;
+      width: 75%;
+    }
+    @include a.respond(phone) {
+      width: 90%;
+    }
+    @include a.respond(phone-small) {
+      padding-top: a.$gap-large;
+      width: 100%;
+    }
   }
-  // &__grid {
-  //   grid-area: img;
-  //   height: 100%;
-  //   width: 75%;
-
-  //   display: grid;
-  //   gap: a.$gap-med;
-
-  //   grid-template-columns: repeat(11, [col-start] 1fr [col-end]);
-  //   grid-template-rows: repeat(10, [row-start] 1fr [row-end]);
-  // }
-
-  // &__box {
-  //   border-radius: a.rem(20);
-  //   overflow: hidden;
-
-  //   &--1 {
-  //     @include a.gridlayout(3, 3, 2, 2, a.$color-white);
-  //   }
-
-  //   &--2 {
-  //     @include a.gridlayout(4, 5, 1, 2, a.$color-primary);
-  //   }
-
-  //   &--3 {
-  //     @include a.gridlayout(6, 9, 1, 5, a.$color-white);
-  //   }
-
-  //   &--4 {
-  //     @include a.gridlayout(1, 2, 3, 4, a.$color-primary);
-  //   }
-  //   &--5 {
-  //     @include a.gridlayout(3, 5, 3, 5, a.$color-white);
-  //   }
-  //   &--6 {
-  //     @include a.gridlayout(10, 10, 3, 3, a.$color-tertiary-light);
-  //   }
-  //   &--7 {
-  //     @include a.gridlayout(10, 11, 4, 5, a.$color-secondary);
-  //   }
-  //   &--8 {
-  //     @include a.gridlayout(2, 2, 5, 5, a.$color-white);
-  //   }
-  //   &--9 {
-  //     @include a.gridlayout(8, 11, 6, 8, a.$color-white);
-  //   }
-  //   &--10 {
-  //     @include a.gridlayout(5, 7, 6, 9, a.$color-white);
-  //   }
-  //   &--11 {
-  //     padding: a.$gap-med 0;
-  //     @include a.gridlayout(2, 4, 6, 8, a.$color-secondary-light);
-  //   }
-  //   &--12 {
-  //     @include a.gridlayout(2, 2, 9, 9, a.$color-secondary-light);
-  //   }
-  //   &--13 {
-  //     @include a.gridlayout(3, 4, 9, 10, a.$color-tertiary);
-  //   }
-  //   &--14 {
-  //     @include a.gridlayout(8, 9, 9, 10, a.$color-secondary);
-  //   }
-  //   &--15 {
-  //     @include a.gridlayout(10, 10, 9, 9, a.$color-white);
-  //   }
-  // }
-
-  // &__image {
-  //   height: 100%;
-  //   width: 100%;
-  // }
 }

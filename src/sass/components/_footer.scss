@@ -5,6 +5,13 @@
 
     padding: a.$gap-small;
   }
-  &__copyright {
+  &__link {
+    color: a.$color-primary;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: a.$color-tertiary;
+    }
   }
 }

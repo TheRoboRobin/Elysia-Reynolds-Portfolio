@@ -33,9 +33,13 @@ $gap-xlarge: f.rem(48);
 
 //breakpoints
 
-$bp-smallest: f.rem(600);
+$bp-xsmall: f.rem(400);
+$bp-smallest: f.rem(640);
+$bp-smaller: f.rem(710);
 $bp-small: f.rem(800);
-$bp-medium: f.rem(1000);
+$bp-medium-small: f.rem(900);
+$bp-medium: f.rem(1050);
+$bp-medium-large: f.rem(1120);
 $bp-large: f.rem(1200);
-$bp-larger: f.rem(1400);
+$bp-larger: f.rem(1440);
 $bp-largest: f.rem(1600);

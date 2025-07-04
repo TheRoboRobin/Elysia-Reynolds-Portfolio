@@ -18,10 +18,21 @@
   top: 0;
 
   z-index: 10;
+
+  @include a.respond(tab-port) {
+    height: a.rem(180);
+    color: transparent;
+    background-color: transparent;
+    border-bottom: none;
+  }
 }
 
 .page-container {
   width: 100vw;
+
+  @include a.respond(tab-port) {
+    width: auto;
+  }
 }
 
 .contact-container {
@@ -30,15 +41,25 @@
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
+
+  @include a.respond(tab-port) {
+    padding: a.$gap-med;
+  }
+
+  @include a.respond(phone) {
+    padding: a.$gap-small;
+  }
 }
 
 .works-container {
   width: 100%;
-  padding: a.$gap-xlarge 0;
+  // padding: a.$gap-xlarge 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include a.respond(tab);
 }
 
 .footer-container {
@@ -50,6 +71,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @include a.respond(tab-port) {
+    padding-bottom: a.$gap-small;
+    flex-direction: column;
+    gap: a.$gap-small;
+  }
 }
 
 .btn {
@@ -67,7 +94,7 @@
 
   transition: all 0.3s;
 
-  @include a.respond(desktop) {
+  @include a.respond(desktop-large) {
     font-size: a.$font-smed;
     border-radius: a.rem(14);
     width: a.rem(200);
