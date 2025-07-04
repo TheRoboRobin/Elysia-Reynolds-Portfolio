@@ -23,6 +23,10 @@
 
     &:hover:not(.open) {
       transform: translatey(a.$gap-small);
+
+      @media (hover: none) {
+        transform: none;
+      }
     }
 
     @include a.respond(desktop-small) {
